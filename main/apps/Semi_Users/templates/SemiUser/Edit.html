@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Users</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+	<form class="from-group" method="POST" action="/users/update/{{users.id}}">
+		{% csrf_token%}
+		{% if messages %}
+			{% for message in messages%}
+			<p style="color : red;">{{message}}</p>
+			{% endfor%}
+		{% endif%}	
+		<label for ="first_name">First_name</label>
+		<input type="text" name="first_name" class="form-control" value="{{users.first_name}}">
+
+		<label for="last_name">Last_name</label>
+		<input type="text" name="last_name" class="form-control" value="{{users.last_name}}">
+
+		<label for="email">Email</label>
+		<input type="email" name="email" class="form-control" value="{{users.email}}">
+		<button type="submit" class="btn btn-info">Update</button>
+	</form>
+</body>
+</html>

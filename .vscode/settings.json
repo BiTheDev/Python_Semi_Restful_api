@@ -1,0 +1,3 @@
+{
+    "python.pythonPath": "${workspaceFolder}/SemiPy3Env/bin/python"
+}
